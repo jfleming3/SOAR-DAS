@@ -1,3 +1,0 @@
-useDynLib("orca")
-
-export(count4, count5, ecount4, ecount5)

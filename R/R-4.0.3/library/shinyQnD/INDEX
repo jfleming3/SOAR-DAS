@@ -1,8 +1,0 @@
-generateChoices         Dependent choices for selectInput
-generateChoices_generateTableData
-                        Updating your data and selectInputs in one easy
-                        step
-generateSelectInput     (mostly) Dynamically Generated SelectInputs
-generateTableData       Generating dataframe based on
-                        shiny::selectInputs
-resetSelectionInputs    Resetting SelectInputs to All

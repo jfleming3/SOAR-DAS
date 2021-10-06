@@ -1,4 +1,0 @@
-bcrypt	bcrypt
-checkpw	bcrypt
-gensalt	bcrypt
-hashpw	bcrypt
