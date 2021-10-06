@@ -1,0 +1,90 @@
+"","Education Status","Intake Date","Last Name","First Name","Homeless","Rent Evicted","Transportation Reliable","Parenting Time","Limited English","Chemical Dependence","Criminal Record","Criminal Legal Issues","Diagnosed Disability","Mental Health","Medical Condition","Employed Status","Education Completed","Sort Seq"
+"1",1,NA,"Elric","Edward",0,0,0,0,1,0,0,NA,0,1,1,1,"Unknown",10
+"2",1,NA,"Rahl","Richard",0,0,0,0,0,0,1,NA,0,0,0,5,"Unknown",10
+"3",1,2020-10-07,"Puff","Cheese",0,0,0,0,1,1,1,NA,0,0,1,2,"Unknown",10
+"4",1,2020-09-08,"Moberg","Bryen",1,0,0,0,0,1,1,NA,0,1,0,6,"Unknown",10
+"5",1,NA,"Bisop","Izaiah",0,0,0,0,0,1,0,NA,0,0,1,2,"Unknown",10
+"6",1,2020-08-11,"John","Lennin",1,0,0,0,1,0,1,NA,0,0,1,1,"Unknown",10
+"7",1,NA,NA,NA,0,0,0,0,0,1,1,NA,0,0,0,1,"Unknown",10
+"8",1,2020-07-05,"Bernard","Steve",0,0,0,0,1,0,1,NA,1,0,0,6,"Unknown",10
+"9",2,2020-11-25,"Star","Patrick",1,0,0,0,1,0,0,NA,0,1,0,5,"High School Graduate",2
+"10",2,NA,"Shepherd","Rand",1,0,0,0,0,0,0,NA,0,0,0,6,"High School Graduate",2
+"11",2,2020-11-02,"Squarepants","Spongebob",0,0,0,0,0,1,0,NA,0,1,0,3,"High School Graduate",2
+"12",2,2020-11-03,"Miller","Dawson",0,0,0,0,0,1,1,NA,1,1,0,2,"High School Graduate",2
+"13",2,NA,NA,NA,0,0,0,0,0,1,0,NA,0,0,0,2,"High School Graduate",2
+"14",2,2020-06-04,"Gilmore","Happy",0,0,0,0,1,0,1,NA,1,0,0,1,"High School Graduate",2
+"15",2,2020-11-08,"Fancyson","Squilliam",1,0,0,0,1,0,0,NA,1,1,0,4,"High School Graduate",2
+"16",2,NA,"Elric","Alphonse",1,0,0,0,1,0,1,NA,0,0,1,2,"High School Graduate",2
+"17",2,NA,"Funfetti","Crayola",0,0,0,0,1,0,0,NA,0,0,1,6,"High School Graduate",2
+"18",3,2020-09-15,"Finch","Jeremy",1,0,0,0,0,0,1,NA,1,0,0,3,NA,NA
+"19",3,2020-11-01,"Krabs","Pearl",0,0,0,0,1,0,0,NA,0,1,1,6,NA,NA
+"20",3,2020-09-15,"Krabs","Eugene",0,0,0,0,0,0,0,NA,0,0,1,1,NA,NA
+"21",3,NA,NA,NA,0,0,0,0,0,0,0,NA,0,0,0,3,NA,NA
+"22",3,2020-07-13,"Lord of Cinder","Gwyn",0,0,0,0,0,1,1,NA,0,0,0,4,NA,NA
+"23",3,NA,"Shepherd","Mat",0,0,0,0,1,0,0,NA,0,0,0,1,NA,NA
+"24",3,2019-10-28,"Plankton","Karen",0,0,0,0,0,1,0,NA,0,0,0,2,NA,NA
+"25",3,2020-05-12,"Madison","Billy",1,0,0,0,0,1,1,NA,0,0,1,2,NA,NA
+"26",3,NA,"Tusk","Armored",1,0,0,0,0,0,0,NA,1,1,0,3,NA,NA
+"27",3,2020-11-09,"Darwick","Chad",0,0,0,0,0,1,1,NA,0,1,1,1,NA,NA
+"28",4,2020-09-22,"Lincoln","Abraham",1,0,0,0,0,0,1,NA,1,0,0,4,"Vocational School Graduate",6
+"29",4,NA,NA,NA,0,0,0,0,0,0,0,NA,0,0,0,1,"Vocational School Graduate",6
+"30",4,2020-11-19,"White","Betty",0,0,0,0,0,0,1,NA,0,0,0,3,"Vocational School Graduate",6
+"31",4,NA,"Cranapple","Jasmine",1,0,0,0,0,0,0,NA,0,0,1,4,"Vocational School Graduate",6
+"32",4,2020-05-12,"the Holy Blade","Ludwig",0,0,0,0,0,1,1,NA,0,1,0,5,"Vocational School Graduate",6
+"33",4,2020-08-03,"of Astora","Solaire",0,0,0,0,0,0,0,NA,1,0,0,2,"Vocational School Graduate",6
+"34",4,2020-06-15,"the Last Hunter","Gehrman",1,0,0,0,1,0,1,NA,0,0,0,6,"Vocational School Graduate",6
+"35",4,2020-07-09,"One","Ashen",0,0,0,0,1,0,1,NA,0,0,0,1,"Vocational School Graduate",6
+"36",4,NA,"Rahl","Darken",0,0,0,0,0,1,0,NA,0,1,1,2,"Vocational School Graduate",6
+"37",5,NA,"Armstrong","Alex",1,0,0,0,0,1,1,NA,1,0,0,3,"AA Degree",7
+"38",5,2020-04-28,"Logan","Big Hat",0,0,0,0,0,0,0,NA,0,0,1,5,"AA Degree",7
+"39",5,2020-11-22,"of England","The Queen",1,0,0,0,0,0,0,NA,0,1,0,4,"AA Degree",7
+"40",5,2020-07-13,"Washington","George",0,0,0,0,1,0,0,NA,1,0,1,5,"AA Degree",7
+"41",5,2020-10-06,"Tonic Water","Salty",0,0,0,0,0,1,0,NA,0,0,0,4,"AA Degree",7
+"42",5,2020-09-07,"Patches","Trusty",1,0,0,0,0,0,0,NA,0,1,0,3,"AA Degree",7
+"43",5,NA,"Anna","John",0,0,0,0,0,1,0,NA,0,1,0,5,"AA Degree",7
+"44",5,NA,"Vader","Darth",1,0,0,0,0,0,0,NA,0,0,0,3,"AA Degree",7
+"45",6,NA,"Mustang","Roy",1,0,0,0,0,0,1,NA,1,0,0,4,"4 Year Degree",8
+"46",6,2020-04-21,"Frampt","Kingseeker",1,0,0,0,1,0,0,NA,0,0,1,6,"4 Year Degree",8
+"47",6,2020-07-14,"Flintstone","Fred",0,0,0,0,1,0,0,NA,0,0,1,6,"4 Year Degree",8
+"48",6,NA,"Riza","Bella",0,0,0,0,1,0,0,NA,1,1,0,6,"4 Year Degree",8
+"49",6,NA,"Skywalker","Luke",1,0,0,0,0,0,0,NA,1,1,1,1,"4 Year Degree",8
+"50",6,2020-06-09,"Gangley","Went",0,0,0,0,1,0,0,NA,1,1,0,5,"4 Year Degree",8
+"51",6,NA,"Bowman","Legolas",0,0,0,0,0,0,0,NA,1,0,0,4,"4 Year Degree",8
+"52",7,NA,"Lehman","Noah",1,0,0,0,0,1,0,NA,0,0,0,5,"Post Graduate Degree",9
+"53",7,NA,"Cheese","Sue",0,0,0,0,0,0,0,NA,0,0,0,5,"Post Graduate Degree",9
+"54",7,NA,"Kubernetes","Alex",1,0,0,0,1,0,1,NA,0,1,0,5,"Post Graduate Degree",9
+"55",7,2020-09-16,"Agley","Aft",0,0,0,0,0,0,0,NA,0,1,0,6,"Post Graduate Degree",9
+"56",7,NA,"Maul","Darth",0,0,0,0,0,0,0,NA,1,1,0,2,"Post Graduate Degree",9
+"57",7,2020-07-22,"Gargano","George",1,0,0,0,0,0,0,NA,0,1,1,1,"Post Graduate Degree",9
+"58",8,2020-05-06,"of Astora","Andre",0,0,0,0,1,0,1,NA,0,0,0,1,"Less than a High School Degree",1
+"59",8,NA,"Apple","Lee",0,0,0,0,0,1,0,NA,1,1,1,6,"Less than a High School Degree",1
+"60",8,NA,"Stark","Nathan",0,0,0,0,0,0,0,NA,1,1,0,3,"Less than a High School Degree",1
+"61",8,2020-09-08,"Moberg","Kurtis",0,0,0,0,0,1,0,NA,0,0,0,2,"Less than a High School Degree",1
+"62",8,NA,"Johnson-Johnson-Ron-Johnson","Alfredo",0,0,0,0,0,1,0,NA,1,0,1,6,"Less than a High School Degree",1
+"63",8,2020-08-10,"Finster","Jod",1,0,0,0,0,1,0,NA,0,0,1,1,"Less than a High School Degree",1
+"64",9,NA,"Green","Red",1,0,0,0,0,1,0,NA,0,0,1,1,"Some College (No Degree)",4
+"65",9,NA,"Stark","Tony",0,0,0,0,0,1,0,NA,0,0,1,4,"Some College (No Degree)",4
+"66",9,2020-05-19,"of Catarina","Siegmeyer",0,0,0,0,0,0,0,NA,0,0,1,3,"Some College (No Degree)",4
+"67",9,2020-09-16,"Jefferson","George",0,0,0,0,0,0,1,NA,0,0,0,3,"Some College (No Degree)",4
+"68",9,NA,"Johan","Thad",1,0,0,0,1,1,1,NA,0,0,1,2,"Some College (No Degree)",4
+"69",10,2020-07-14,"Duray","Cassidy",0,0,0,0,0,1,0,NA,0,1,0,4,"GED",3
+"70",10,2020-09-15,"Berg","Amanda",1,0,0,0,0,0,1,NA,1,0,0,4,"GED",3
+"71",10,NA,"McConkey","Russel",1,0,0,0,0,1,1,NA,0,0,1,3,"GED",3
+"72",11,NA,"Dream","Winter",1,0,0,0,0,0,1,NA,0,1,0,4,"Post Secondary Certification",5
+"73",11,NA,NA,NA,0,0,0,0,0,0,0,NA,0,1,0,5,"Post Secondary Certification",5
+"74",11,2020-07-06,"Reed","Erickson",1,0,0,0,0,1,1,NA,0,1,0,5,"Post Secondary Certification",5
+"75",11,NA,"Red","Pops",1,0,0,0,0,1,0,NA,1,1,0,2,"Post Secondary Certification",5
+"76",11,NA,NA,NA,1,0,0,0,0,1,0,NA,0,1,0,3,"Post Secondary Certification",5
+"77",11,2020-08-23,"Wilken","Jarod",0,0,0,0,1,0,0,NA,1,1,1,5,"Post Secondary Certification",5
+"78",11,NA,NA,NA,0,0,0,0,1,0,1,NA,1,0,0,6,"Post Secondary Certification",5
+"79",11,NA,NA,NA,0,0,0,0,0,1,0,NA,1,1,0,4,"Post Secondary Certification",5
+"80",11,NA,"Docker","Jeff",0,0,0,0,1,0,0,NA,0,0,0,6,"Post Secondary Certification",5
+"81",11,NA,"Traefik","Cop",0,0,0,0,1,1,0,NA,0,0,0,1,"Post Secondary Certification",5
+"82",NA,2020-08-05,"Starr","Bart",1,0,0,0,0,0,0,NA,0,0,0,1,NA,NA
+"83",NA,2020-08-10,"Nitchke","Ray",1,0,0,0,0,0,1,"Yes",0,0,1,2,NA,NA
+"84",NA,2020-09-22,"Stark","Tony",1,0,0,0,0,0,0,NA,0,0,0,3,NA,NA
+"85",NA,2020-07-13,"Clark","Kent",1,0,0,0,0,0,0,NA,0,0,1,4,NA,NA
+"86",NA,2020-11-26,"Poppins","Mary",0,0,0,0,0,1,1,NA,0,0,1,5,NA,NA
+"87",NA,2020-07-12,"Todd","Howard",0,0,0,0,1,0,1,NA,0,1,1,6,NA,NA
+"88",NA,2020-06-30,"Plankton","Sheldon",1,0,0,0,0,1,0,NA,1,0,0,3,NA,NA
+"89",NA,2020-05-13,"of Carim","Oswald",1,0,0,0,0,0,0,NA,0,0,0,2,NA,NA

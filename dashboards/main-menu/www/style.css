@@ -1,0 +1,29 @@
+:root {
+  --soar-red: #F1665F;
+  --soft-gray: #B8C1BD;
+  --soar-blue: #15BED3;
+  --light-gray: #E6E8DE;
+}
+
+.header{
+   background-color: var(--soar-blue);
+}
+.header-image{
+  text-align: right;
+  float: right;
+}
+.title{
+ 
+  font-style: italic;
+  font-family: serif;
+  color: white;
+  top: 5px;
+}
+.body{
+  background-color: var(--light-gray);
+  min-height: 900px;
+}
+.body .kpi{
+  background-color: white;
+  min-height: 900px;
+}

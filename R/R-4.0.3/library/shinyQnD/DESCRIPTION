@@ -1,0 +1,14 @@
+Package: shinyQnD
+Type: Package
+Title: Shiny Quick 'n' Dirty
+Version: 0.0.2
+Author: Bryen Moberg
+Maintainer: Bryen Moberg <bryenmoberg@gmail.com>
+Description: Some functions for creating things like selectInputs with dependencies on eachother very quickly.
+License:
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.1
+NeedsCompilation: no
+Packaged: 2020-10-07 17:15:27 UTC; bryen
+Built: R 4.0.2; ; 2020-10-07 17:49:05 UTC; windows
