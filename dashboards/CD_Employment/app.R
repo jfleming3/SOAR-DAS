@@ -26,6 +26,18 @@ ui <- fluidPage(class = "page",includeCSS("www/style.css"),
       dateRangeInput("daterange","Hire Date", format = "mm/dd/yyyy",start = Sys.Date() - 120, end = Sys.Date()),
       checkboxInput("showAll", "Show All (ignore dates)", value = F),
       
+      # genders
+      selectInput(inputId = "gender", label = "Gender", choices = c("Male", "Female", "Trans", "Trans Man", "Trans Woman", "Non-Binary", "GenderQueer", "Other"), multiple = T),
+      
+      # race
+      selectInput(inputId = "race", label = "Race", choices = c("White", "Black", "Asian", "Native American", "Hispanic", "Multi-Racial", "Native Hawaiian", "Unknown"), multiple = T),
+      
+      # education level
+      selectInput(inputId = "educationCompleted",multiple = T, label = "Education Completed", choices = c("Less than a High School Degree", "High School Graduate", "GED", "Some College (No Degree)", "Post Secondary Certification", "Vocational School Graduate", "AA Degree", "4 Year Degree", "Post Graduate Degree", "Unknown")),
+      
+      # age
+      #  textInput(inputId = "age", label = "Age", value = ""),
+      sliderInput(inputId = "age", label = "Age", min = 0, max = 120, step = 1, value = c(0,120)),
       
       radioButtons("fileType","File Type",c("Excel" = ".xlsx", "Comma Separated Values" = ".csv"), selected = ".xlsx", inline = T),
       downloadButton('downloadData', 'Download'),
