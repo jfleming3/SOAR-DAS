@@ -7,7 +7,7 @@
 "6",6,NA,5,"Howard","Todd",NA,1988-06-06,NA,"Unknown","Unknown",50,NA,NA,NA,NA,NA,NA,NA,NA
 "7",7,1,6,"Lennin","John",NA,1988-07-01,NA,"Hispanic","Hispanic",20,"Unknown",10,"Unknown",10,NA,NA,NA,NA
 "8",8,1,7,"Cheese","Puff",NA,1997-07-06,NA,"Multi-Racial","Multi-Racial",44,"Unknown",10,"Unknown",10,NA,NA,NA,NA
-"9",9,2,8,"Spongebob","Squarepants",NA,1990-05-07,NA,"Native Hawaiian/Pacific Islander","Native Hawian",8,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
+"9",9,2,8,"Spongebob","Squarepants",NA,1990-05-07,NA,"Native Hawaiian/Pacific Islander","Native Hawaiian",8,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
 "10",10,2,9,"Squilliam","Fancyson",NA,1990-04-06,NA,"A.Ind. & White","Native American",6,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
 "11",11,2,10,"Patrick","Star",NA,1990-05-07,NA,"Black & White","Black",11,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
 "12",12,3,11,"Pearl","Krabs",NA,1957-03-07,NA,"Asian & White","Asian",2,NA,NA,NA,NA,NA,NA,NA,NA
@@ -18,7 +18,7 @@
 "17",17,4,4,"Ludwig","the Holy Blade",NA,1975-05-07,NA,"American Indian/Alaska Native","Native American",5,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
 "18",18,4,5,"Gehrman","the Last Hunter",NA,1985-07-05,NA,"Unknown","Unknown",50,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
 "19",19,4,7,"Ashen","One",NA,1945-05-06,NA,"Multi-Racial","Multi-Racial",44,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
-"20",20,4,8,"Solaire","of Astora",NA,1957-03-07,NA,"Native Hawaiian/Pacific Islander","Native Hawian",8,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
+"20",20,4,8,"Solaire","of Astora",NA,1957-03-07,NA,"Native Hawaiian/Pacific Islander","Native Hawaiian",8,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
 "21",21,5,9,"Trusty","Patches",NA,1985-05-05,NA,"A.Ind. & White","Native American",6,"AA Degree",7,"AA Degree",7,NA,NA,NA,NA
 "22",22,5,10,"Salty","Tonic Water",NA,1985-04-05,NA,"Black & White","Black",11,"AA Degree",7,"AA Degree",7,NA,NA,NA,NA
 "23",23,5,11,"Big Hat","Logan",NA,1946-07-03,NA,"Asian & White","Asian",2,"AA Degree",7,"AA Degree",7,NA,NA,NA,NA
@@ -30,7 +30,7 @@
 "29",29,11,5,"Erickson","Reed",NA,1977-03-07,NA,"Unknown","Unknown",50,"Post Secondary Certification",5,"Post Secondary Certification",5,NA,NA,NA,NA
 "30",30,1,6,"Bryen","Moberg",NA,1973-04-09,NA,"Hispanic","Hispanic",20,"Unknown",10,"Unknown",10,NA,NA,NA,NA
 "31",31,3,7,"Chad","Darwick",NA,1987-04-23,NA,"Multi-Racial","Multi-Racial",44,NA,NA,NA,NA,NA,NA,NA,NA
-"32",32,2,8,"Dawson","Miller",NA,1957-03-07,NA,"Native Hawaiian/Pacific Islander","Native Hawian",8,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
+"32",32,2,8,"Dawson","Miller",NA,1957-03-07,NA,"Native Hawaiian/Pacific Islander","Native Hawaiian",8,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
 "33",33,3,9,"Jeremy","Finch",NA,1987-03-07,NA,"A.Ind. & White","Native American",6,NA,NA,NA,NA,NA,NA,NA,NA
 "34",34,4,10,"Abraham","Lincoln",NA,1946-07-03,NA,"Black & White","Black",11,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
 "35",35,5,11,"George","Washington",NA,1985-07-05,NA,"Asian & White","Asian",2,"AA Degree",7,"AA Degree",7,NA,NA,NA,NA
@@ -42,7 +42,7 @@
 "41",41,11,5,"Jarod","Wilken",NA,1990-05-07,NA,"Unknown","Unknown",50,"Post Secondary Certification",5,"Post Secondary Certification",5,NA,NA,NA,NA
 "42",42,1,6,"Steve","Bernard",NA,1990-05-07,NA,"Hispanic","Hispanic",20,"Unknown",10,"Unknown",10,NA,NA,NA,NA
 "43",43,2,7,"Happy","Gilmore",NA,1975-05-07,NA,"Multi-Racial","Multi-Racial",44,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
-"44",44,3,8,"Billy","Madison",NA,1957-03-07,NA,"Native Hawaiian/Pacific Islander","Native Hawian",8,NA,NA,NA,NA,NA,NA,NA,NA
+"44",44,3,8,"Billy","Madison",NA,1957-03-07,NA,"Native Hawaiian/Pacific Islander","Native Hawaiian",8,NA,NA,NA,NA,NA,NA,NA,NA
 "45",45,4,9,"Betty","White",NA,1988-07-01,NA,"A.Ind. & White","Native American",6,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
 "46",46,5,10,"The Queen","of England",NA,1946-07-03,NA,"Black & White","Black",11,"AA Degree",7,"AA Degree",7,NA,NA,NA,NA
 "47",47,6,11,"Went","Gangley",NA,1988-07-01,NA,"Asian & White","Asian",2,"4 Year Degree",8,"4 Year Degree",8,NA,NA,NA,NA
@@ -54,7 +54,7 @@
 "53",53,1,5,"Richard","Rahl",NA,1985-07-05,NA,"Unknown","Unknown",50,"Unknown",10,"Unknown",10,NA,NA,NA,NA
 "54",54,2,6,"Rand","Shepherd",NA,1976-05-22,NA,"Hispanic","Hispanic",20,"High School Graduate",2,"High School Graduate",2,NA,NA,NA,NA
 "55",55,3,7,"Mat","Shepherd",NA,1976-05-22,NA,"Multi-Racial","Multi-Racial",44,NA,NA,NA,NA,NA,NA,NA,NA
-"56",56,4,8,"Darken","Rahl",NA,1976-05-22,NA,"Native Hawaiian/Pacific Islander","Native Hawian",8,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
+"56",56,4,8,"Darken","Rahl",NA,1976-05-22,NA,"Native Hawaiian/Pacific Islander","Native Hawaiian",8,"Vocational School Graduate",6,"Vocational School Graduate",6,NA,NA,NA,NA
 "57",57,5,9,"Darth","Vader",NA,1976-05-22,NA,"A.Ind. & White","Native American",6,"AA Degree",7,"AA Degree",7,NA,NA,NA,NA
 "58",58,6,10,"Legolas","Bowman",NA,1985-07-05,NA,"Black & White","Black",11,"4 Year Degree",8,"4 Year Degree",8,NA,NA,NA,NA
 "59",59,7,11,"Sue","Cheese",NA,1985-07-05,NA,"Asian & White","Asian",2,"Post Graduate Degree",9,"Post Graduate Degree",9,NA,NA,NA,NA
@@ -77,7 +77,7 @@
 "76",76,5,5,"Alex","Armstrong",NA,1987-01-06,NA,"Unknown","Unknown",50,"AA Degree",7,"AA Degree",7,NA,NA,NA,NA
 "77",77,6,6,"Roy","Mustang",NA,1987-01-06,NA,"Hispanic","Hispanic",20,"4 Year Degree",8,"4 Year Degree",8,NA,NA,NA,NA
 "78",78,7,7,"Alex","Kubernetes",NA,1985-07-05,NA,"Multi-Racial","Multi-Racial",44,"Post Graduate Degree",9,"Post Graduate Degree",9,NA,NA,NA,NA
-"79",79,11,8,"Jeff","Docker",NA,1987-01-06,NA,"Native Hawaiian/Pacific Islander","Native Hawian",8,"Post Secondary Certification",5,"Post Secondary Certification",5,NA,NA,NA,NA
+"79",79,11,8,"Jeff","Docker",NA,1987-01-06,NA,"Native Hawaiian/Pacific Islander","Native Hawaiian",8,"Post Secondary Certification",5,"Post Secondary Certification",5,NA,NA,NA,NA
 "80",80,11,9,"Cop","Traefik",NA,1985-07-05,NA,"A.Ind. & White","Native American",6,"Post Secondary Certification",5,"Post Secondary Certification",5,NA,NA,NA,NA
 "81",81,11,10,"Pops","Red",NA,1985-07-05,NA,"Black & White","Black",11,"Post Secondary Certification",5,"Post Secondary Certification",5,NA,NA,NA,NA
 "82",82,11,NA,NA,NA,NA,NA,NA,NA,NA,NA,"Post Secondary Certification",5,"Post Secondary Certification",5,NA,NA,NA,NA
