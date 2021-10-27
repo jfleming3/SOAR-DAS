@@ -70,9 +70,9 @@ server <- function(input,output, session){
   observeEvent(input$demographic_employment,{
     if (input$demographic_employment > 0) {
     setwd("..")
-    setwd("CD_Employment")
+    setwd("demographic-employment")
    # path <- "..\\demographic-employment\\runDemographicDashboard.bat"
-    system("runCDEmploymentDashboard.bat")
+    system("runDemographicDashboard.bat")
     q("no")
     }
   })
@@ -80,7 +80,7 @@ server <- function(input,output, session){
   observeEvent(input$chemical_dependency,{
     if (input$chemical_dependency > 0) {
     setwd("..")
-    setwd("CD_Employement")
+    setwd("CD_Employment")
 
     system("runCDEmploymentDashboard.bat")
     q("no")

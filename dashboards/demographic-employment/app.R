@@ -32,7 +32,7 @@ ui <- fluidPage(
     # Sidebar 
     fluidRow(
      
-        column(width = 4,class = "dash-sidebar",
+        column(width = 6,class = "dash-sidebar",
             # app intro
             # genders
             selectInput(inputId = "showCols", "Show Columns", multiple = T, choices = c()),
@@ -49,6 +49,13 @@ ui <- fluidPage(
             sliderInput(inputId = "age", label = "Age", min = 0, max = 120, step = 1, value = c(0,120)),
           #  sliderInput(inputId = "wage", label = "Wage", min = 0,max = 500, step = 1, value = c(0,120)),
             
+            # funding
+            selectInput(inputId = "funding",multiple = T, label = "Funding", choices = c("City CDBG", "County CDBG", "DEED P2P", "DEED/WESA", "MFIP", "MN-OJP", "OYOD", "United Way", "United Way-RS", "VI-SPDAT", "Fee-Workshop", "Fee-Individual Services", "Other Agency", "No Funding")),
+            
+            #Services
+            selectInput(inputId = "program",multiple = T, label = "Program", choices = c("Career Quest", "Employment Services", "Mind Over Matters", "RS-Pre Release", "RS-Post Release", "RS-Aftercare", "Phase 3 - Training", "Phase 4 - DAW", "Phase 4 - Other", "Fee Services")),
+          
+          
             # picking dates
             #tags$head(tags$style(".myclass {background-color: #96dafb;}")),
             span(class = "date-range",
@@ -104,9 +111,11 @@ server <- function(input, output, session) {
     updateInputs <- observeEvent(data(),{
         #this reactive updates the selectInputs so that only the options that are present in the data are shown 
         data <- data()
-        updateSelectInput(session, "gender","Gender",choices = c(unique(data$Age)))
+        updateSelectInput(session, "gender","Gender",choices = c(unique(data$Gender)))
         updateSelectInput(session, "race","Race",choices = c(unique(data$Race)))
         updateSelectInput(session, "educationCompleted","Education Completed",choices = c(unique(data$Education.Completed)))
+        updateSelectInput(session, "funding","Funding",choices = c(unique(data$Funding)))
+        updateSelectInput(session, "program","Program",choices = c(unique(data$Program)))
         
         is_not_na <- !unlist(lapply(data$Wage,is.na))
        # print(unlist(is_not_na))
@@ -180,6 +189,15 @@ server <- function(input, output, session) {
             data <- data[data$Education.Completed %in% input$educationCompleted,]
 
         }
+        if(!is.null(input$funding)){
+          data <- data[data$Funding %in% input$funding,]
+          
+        }
+        if(!is.null(input$program)){
+          data <- data[data$Program %in% input$program,]
+          
+        }
+        
        # print(data)
       #  data <- data[data$Wage > input$wage[1] & data$Wage < input$Wage[2]]
         
