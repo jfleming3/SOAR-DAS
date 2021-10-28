@@ -18,7 +18,7 @@ ui <- fluidPage(class = "page",includeCSS("www/style.css"),
                      )
                     ),
   sidebarLayout(
-    
+     
     sidebarPanel(class = "dash-sidebar",
       
       # picking dates
@@ -78,30 +78,34 @@ server <- function(input,output, session){
     
 
 
+    tableData <- reactive({
+        #get data
+        data <- data()
+        
 
+        #this will determine which rows are in our date range
+        if((!is.na(data$Last.Employment))){
+        rows_by_date <- between(as.Date(data$Last.Employment,"%Y-%m-%d"),as.Date(input$daterange[1],"%m/%d/%Y"),as.Date(input$daterange[2],"%m/%d/%Y"))
+        
 
+        
+        data <- data[rows_by_date,]
+        }
 
-
+     
     
-    output$tableOut <- renderTable({
-      data <- data()
-      
+        #calculate age
+        data$Age <- floor((Sys.Date() - as.Date(data$Birth.Date,"%Y-%m-%d")) / 365.25)
+        data$Age <- as.integer(data$Age)
 
-      data$MonthsEmployed <-
-        as.numeric(as.Date(data$Termination.Date,"%Y-%m-%d") - as.Date(data$Hire.Date,"%Y-%m-%d")) / 30.4375
-
-
-      #this will determine which rows are in our date range
-      if(!input$showAll){
-      data <- data[!is.na(data$Hire.Date),]
-      rows_by_date <- between(as.Date(data$Hire.Date,"%Y-%m-%d"),input$daterange[1],input$daterange[2])
-      data <- data[rows_by_date,]
-      }
-
-      
-      data
-      
-      if(!is.null(input$gender)){
+        
+        #this determines if the age is between our minimum and maximum range
+        #performing comparisons across boolean vectors can be difficult, so we are adding them instead
+        #since R defines T = 1, F = 0, an AND operation will have a value of 2 if both arguments are TRUE
+    
+        data <- data[{ {input$age[1] <= data$Age} + {data$Age <= input$age[2]} } == 2,]
+        #filter data based on inputs
+        if(!is.null(input$gender)){
             data <- data[data$Gender %in% input$gender,]
          
         }
@@ -122,6 +126,40 @@ server <- function(input,output, session){
           data <- data[data$Program %in% input$program,]
           
         }
+        
+       # print(data)
+      #  data <- data[data$Wage > input$wage[1] & data$Wage < input$Wage[2]]
+        
+        #get desired columns
+
+        print(colnames(data))
+        data <- data[c("Client.Id","First.Name","Last.Name","Gender","Race","Education.Completed.x","Age", "Last.Employment","Wage")]
+        print(colnames(data))
+        data$Wage <- paste("$",data$Wage) 
+        colnames(data)[6] = "Education.Completed"
+        colnames(data) <- gsub("."," ",colnames(data), fixed = T)
+        data
+    })
+
+
+    output$tableOut <- renderTable({
+      data <- data()
+      
+
+      data$MonthsEmployed <-
+        as.numeric(as.Date(data$Termination.Date,"%Y-%m-%d") - as.Date(data$Hire.Date,"%Y-%m-%d")) / 30.4375
+
+
+      #this will determine which rows are in our date range
+      if(!input$showAll){
+      data <- data[!is.na(data$Hire.Date),]
+      rows_by_date <- between(as.Date(data$Hire.Date,"%Y-%m-%d"),input$daterange[1],input$daterange[2])
+      data <- data[rows_by_date,]
+      }
+
+      
+      data
+      
 
       
 
