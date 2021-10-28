@@ -76,6 +76,13 @@ server <- function(input,output, session){
       input$select1
     })
     
+
+
+
+
+
+
+    
     output$tableOut <- renderTable({
       data <- data()
       
@@ -94,6 +101,27 @@ server <- function(input,output, session){
       
       data
       
+      if(!is.null(input$gender)){
+            data <- data[data$Gender %in% input$gender,]
+         
+        }
+        
+        if(!is.null(input$race)){
+            data <- data[data$Race %in% input$race,]
+
+        }
+        if(!is.null(input$educationCompleted)){
+            data <- data[data$Education.Completed %in% input$educationCompleted,]
+
+        }
+        if(!is.null(input$funding)){
+          data <- data[data$Funding %in% input$funding,]
+          
+        }
+        if(!is.null(input$program)){
+          data <- data[data$Program %in% input$program,]
+          
+        }
 
       
 
