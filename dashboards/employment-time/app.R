@@ -55,7 +55,7 @@ ui <- fluidPage(class = "page",
                                  radioButtons("fileType","File Type",c("Excel" = ".xlsx", "Comma Separated Values" = ".csv"), selected = ".xlsx", inline = T),
                                  downloadButton('downloadData', 'Download'),
                                  span(class = "report-button",
-                                      actionButton("back", "Home", icon = icon("arrow-left"), onclick = "setTimeout(function(){window.close();},500); stopApp();"),
+                                      actionButton("back", "Home", icon = icon("arrow-left"), onclick = "setTimeout(function(){window.close();},5000); stopApp();"),
                                       actionButton("info","", icon = icon("info-circle")),
                                  )
                           ),
