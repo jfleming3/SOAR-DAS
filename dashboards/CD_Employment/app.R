@@ -41,7 +41,7 @@ ui <- fluidPage(class = "page",includeCSS("www/style.css"),
       
       radioButtons("fileType","File Type",c("Excel" = ".xlsx", "Comma Separated Values" = ".csv"), selected = ".xlsx", inline = T),
       downloadButton('downloadData', 'Download'),
-      actionButton("back", "Home", icon = icon("arrow-left"), onclick = "setTimeout(function(){window.close();},500); stopApp();")
+      actionButton("back", "Home", icon = icon("arrow-left"), onclick = "setTimeout(function(){window.close();},5000); stopApp();")
     ),
     mainPanel(
       # plotlyOutput("plotOut"),
