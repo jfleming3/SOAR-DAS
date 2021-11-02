@@ -26,6 +26,9 @@ ui <- fluidPage(class = "page",includeCSS("www/style.css"),
       dateRangeInput("daterange","Hire Date", format = "mm/dd/yyyy",start = Sys.Date() - 120, end = Sys.Date()),
       checkboxInput("showAll", "Show All (ignore dates)", value = F),
       
+      # show cols
+      selectInput(inputId = "showCols", "Show Columns", multiple = T, choices = c()),
+      
       # genders
       selectInput(inputId = "gender", label = "Gender", choices = c("Male", "Female", "Trans", "Trans Man", "Trans Woman", "Non-Binary", "GenderQueer", "Other"), multiple = T),
       
