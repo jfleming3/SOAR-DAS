@@ -50,6 +50,15 @@ ui <- fluidPage(
             # family size
             sliderInput(inputId = "cdbgCityFamilySize", label = "CDBG City Family Size", min = 0, max = 15, step = 1, value = c(0,15)),
             
+            # MA
+            selectInput(inputId = "ma", label = "MA", multiple = T, choices = c(0,1)),
+            
+            # MFIP
+            selectInput(inputId = "mfip", label = "MFIP", multiple = T, choices = c(0,1)),
+            
+            # DWP
+            selectInput(inputId = "dwp", label = "DWP", multiple = T, choices = c(0,1)),
+            
             # funding
             # selectInput(inputId = "funding",multiple = T, label = "Funding", choices = c("City CDBG", "County CDBG", "DEED P2P", "DEED/WESA", "MFIP", "MN-OJP", "OYOD", "United Way", "United Way-RS", "VI-SPDAT", "Fee-Workshop", "Fee-Individual Services", "Other Agency", "No Funding")),
             
@@ -118,10 +127,14 @@ server <- function(input, output, session) {
         # updateSelectInput(session, "program","Program",choices = c(unique(data$Program)))
         
         is_not_na <- !unlist(lapply(data$CDBG.City.Family.Size,is.na))
-        # print(unlist(is_not_na))
         availableFS <- data$CDBG.City.Family.Size[is_not_na]
         
         updateSliderInput(session,"cdbgCityFamilySize", max = max(availableFS))
+        
+        is_not_na <- !unlist(lapply(data$Age,is.na))
+        availableFS <- data$Age[is_not_na]
+        
+        updateSliderInput(session,"age", max = max(availableFS))
     })
     
    updateColumnInput <- observeEvent(tableData,{
@@ -181,17 +194,23 @@ server <- function(input, output, session) {
         #filter data based on inputs
         if(!is.null(input$gender)){
             data <- data[data$Gender %in% input$gender,]
-         
         }
-        
         if(!is.null(input$ethnicity)){
             data <- data[data$Ethnicity %in% input$ethnicity,]
-
         }
         if(!is.null(input$educationAtIntake)){
             data <- data[data$Education.At.Intake %in% input$educationAtIntake,]
-
         }
+        if(!is.null(input$ma)) {
+          data <- data[data$MA %in% input$ma,]
+        }
+        if(!is.null(input$mfip)) {
+            data <- data[data$MFIP %in% input$mfip,]
+        }
+        if(!is.null(input$dwp)) {
+            data <- data[data$DWP %in% input$dwp,]
+        }
+        
         # if(!is.null(input$funding)){
         #   data <- data[data$Funding %in% input$funding,]
           
@@ -207,7 +226,7 @@ server <- function(input, output, session) {
         #get desired columns
 
         print(colnames(data))
-        data <- data[c("Client.Id","Client","Gender","Ethnicity","Education.At.Intake","CDBG.City.Family.Size","Age", "CDBG.City.Income")]
+        data <- data[c("Client.Id","Client","Gender","Ethnicity","Education.At.Intake","CDBG.City.Family.Size","Age", "CDBG.City.Income", "MA", "MFIP", "DWP")]
         print(colnames(data))
         # data$Wage <- paste("$",data$Wage) 
         # colnames(data)[6] = "Education.At.Intake"
