@@ -39,28 +39,28 @@ ui <- fluidPage(
             selectInput(inputId = "gender", label = "Gender", choices = c("Male", "Female", "Trans", "Trans Man", "Trans Woman", "Non-Binary", "GenderQueer", "Other"), multiple = T),
             
             # race
-            selectInput(inputId = "race", label = "Race", choices = c("White", "Black", "Asian", "Native American", "Hispanic", "Multi-Racial", "Native Hawaiian", "Unknown"), multiple = T),
+            selectInput(inputId = "ethnicity", label = "Ethnicity", choices = c("White", "Black", "Asian", "Native American", "Hispanic", "Multi-Racial", "Native Hawaiian", "Unknown"), multiple = T),
         
             # education level
-            selectInput(inputId = "educationCompleted",multiple = T, label = "Education Completed", choices = c("Less than a High School Degree", "High School Graduate", "GED", "Some College (No Degree)", "Post Secondary Certification", "Vocational School Graduate", "AA Degree", "4 Year Degree", "Post Graduate Degree", "Unknown")),
+            selectInput(inputId = "educationAtIntake",multiple = T, label = "Education At Intake", choices = c("Less than a High School Degree", "High School Graduate", "GED", "Some College (No Degree)", "Post Secondary Certification", "Vocational School Graduate", "AA Degree", "4 Year Degree", "Post Graduate Degree", "Unknown")),
             
             # age
-          #  textInput(inputId = "age", label = "Age", value = ""),
             sliderInput(inputId = "age", label = "Age", min = 0, max = 120, step = 1, value = c(0,120)),
-          #  sliderInput(inputId = "wage", label = "Wage", min = 0,max = 500, step = 1, value = c(0,120)),
+            
+            # family size
+            sliderInput(inputId = "cdbgCityFamilySize", label = "CDBG City Family Size", min = 0, max = 15, step = 1, value = c(0,15)),
             
             # funding
-            selectInput(inputId = "funding",multiple = T, label = "Funding", choices = c("City CDBG", "County CDBG", "DEED P2P", "DEED/WESA", "MFIP", "MN-OJP", "OYOD", "United Way", "United Way-RS", "VI-SPDAT", "Fee-Workshop", "Fee-Individual Services", "Other Agency", "No Funding")),
+            # selectInput(inputId = "funding",multiple = T, label = "Funding", choices = c("City CDBG", "County CDBG", "DEED P2P", "DEED/WESA", "MFIP", "MN-OJP", "OYOD", "United Way", "United Way-RS", "VI-SPDAT", "Fee-Workshop", "Fee-Individual Services", "Other Agency", "No Funding")),
             
             #Services
-            selectInput(inputId = "program",multiple = T, label = "Program", choices = c("Career Quest", "Employment Services", "Mind Over Matters", "RS-Pre Release", "RS-Post Release", "RS-Aftercare", "Phase 3 - Training", "Phase 4 - DAW", "Phase 4 - Other", "Fee Services")),
+            # selectInput(inputId = "program",multiple = T, label = "Program", choices = c("Career Quest", "Employment Services", "Mind Over Matters", "RS-Pre Release", "RS-Post Release", "RS-Aftercare", "Phase 3 - Training", "Phase 4 - DAW", "Phase 4 - Other", "Fee Services")),
           
           
             # picking dates
-            #tags$head(tags$style(".myclass {background-color: #96dafb;}")),
-            span(class = "date-range",
-            dateRangeInput("daterange","Last Employed", format = "mm/dd/yyyy",start = Sys.Date() - 30, end = Sys.Date())
-            ),
+            # span(class = "date-range",
+            # dateRangeInput("daterange","Last Employed", format = "mm/dd/yyyy",start = Sys.Date() - 30, end = Sys.Date())
+            # ),
 
           radioButtons("fileType","File Type",c("Excel" = ".xlsx", "Comma Separated Values" = ".csv"), selected = ".xlsx", inline = T),
           downloadButton('downloadData', 'Download'),
@@ -112,16 +112,16 @@ server <- function(input, output, session) {
         #this reactive updates the selectInputs so that only the options that are present in the data are shown 
         data <- data()
         updateSelectInput(session, "gender","Gender",choices = c(unique(data$Gender)))
-        updateSelectInput(session, "race","Race",choices = c(unique(data$Race)))
-        updateSelectInput(session, "educationCompleted","Education Completed",choices = c(unique(data$Education.Completed)))
-        updateSelectInput(session, "funding","Funding",choices = c(unique(data$Funding)))
-        updateSelectInput(session, "program","Program",choices = c(unique(data$Program)))
+        updateSelectInput(session, "ethnicity","Ethnicity",choices = c(unique(data$Ethnicity)))
+        updateSelectInput(session, "educationAtIntake","Education At Intake",choices = c(unique(data$Education.At.Intake)))
+        # updateSelectInput(session, "funding","Funding",choices = c(unique(data$Funding)))
+        # updateSelectInput(session, "program","Program",choices = c(unique(data$Program)))
         
-        is_not_na <- !unlist(lapply(data$Wage,is.na))
-       # print(unlist(is_not_na))
-        availableWages <- data$Wage[is_not_na]
+        is_not_na <- !unlist(lapply(data$CDBG.City.Family.Size,is.na))
+        # print(unlist(is_not_na))
+        availableFS <- data$CDBG.City.Family.Size[is_not_na]
         
-        updateSliderInput(session,"wage", max = max(availableWages))
+        updateSliderInput(session,"cdbgCityFamilySize", max = max(availableFS))
     })
     
    updateColumnInput <- observeEvent(tableData,{
@@ -155,19 +155,19 @@ server <- function(input, output, session) {
         
 
         #this will determine which rows are in our date range
-        if((!is.na(data$Last.Employment))){
-        rows_by_date <- between(as.Date(data$Last.Employment,"%Y-%m-%d"),as.Date(input$daterange[1],"%m/%d/%Y"),as.Date(input$daterange[2],"%m/%d/%Y"))
+        # if((!is.na(data$Last.Employment))){
+        # rows_by_date <- between(as.Date(data$Last.Employment,"%Y-%m-%d"),as.Date(input$daterange[1],"%m/%d/%Y"),as.Date(input$daterange[2],"%m/%d/%Y"))
         
 
         
-        data <- data[rows_by_date,]
-        }
+        # data <- data[rows_by_date,]
+        # }
 
      
     
         #calculate age
-        data$Age <- floor((Sys.Date() - as.Date(data$Birth.Date,"%Y-%m-%d")) / 365.25)
-        data$Age <- as.integer(data$Age)
+        # data$Age <- floor((Sys.Date() - as.Date(data$Birth.Date,"%Y-%m-%d")) / 365.25)
+        # data$Age <- as.integer(data$Age)
 
         
         #this determines if the age is between our minimum and maximum range
@@ -175,28 +175,31 @@ server <- function(input, output, session) {
         #since R defines T = 1, F = 0, an AND operation will have a value of 2 if both arguments are TRUE
     
         data <- data[{ {input$age[1] <= data$Age} + {data$Age <= input$age[2]} } == 2,]
+        
+        data <- data[{ {input$cdbgCityFamilySize[1] <= data$CDBG.City.Family.Size} + {data$CDBG.City.Family.Size <= input$cdbgCityFamilySize[2]} } == 2,]
+        
         #filter data based on inputs
         if(!is.null(input$gender)){
             data <- data[data$Gender %in% input$gender,]
          
         }
         
-        if(!is.null(input$race)){
-            data <- data[data$Race %in% input$race,]
+        if(!is.null(input$ethnicity)){
+            data <- data[data$Ethnicity %in% input$ethnicity,]
 
         }
-        if(!is.null(input$educationCompleted)){
-            data <- data[data$Education.Completed %in% input$educationCompleted,]
+        if(!is.null(input$educationAtIntake)){
+            data <- data[data$Education.At.Intake %in% input$educationAtIntake,]
 
         }
-        if(!is.null(input$funding)){
-          data <- data[data$Funding %in% input$funding,]
+        # if(!is.null(input$funding)){
+        #   data <- data[data$Funding %in% input$funding,]
           
-        }
-        if(!is.null(input$program)){
-          data <- data[data$Program %in% input$program,]
+        # }
+        # if(!is.null(input$program)){
+        #   data <- data[data$Program %in% input$program,]
           
-        }
+        # }
         
        # print(data)
       #  data <- data[data$Wage > input$wage[1] & data$Wage < input$Wage[2]]
@@ -204,10 +207,10 @@ server <- function(input, output, session) {
         #get desired columns
 
         print(colnames(data))
-        data <- data[c("Client.Id","First.Name","Last.Name","Gender","Race","Education.Completed.x","Age", "Last.Employment","Wage")]
+        data <- data[c("Client.Id","Client","Gender","Ethnicity","Education.At.Intake","CDBG.City.Family.Size","Age", "CDBG.City.Income")]
         print(colnames(data))
-        data$Wage <- paste("$",data$Wage) 
-        colnames(data)[6] = "Education.Completed"
+        # data$Wage <- paste("$",data$Wage) 
+        # colnames(data)[6] = "Education.At.Intake"
         colnames(data) <- gsub("."," ",colnames(data), fixed = T)
         data
     })
