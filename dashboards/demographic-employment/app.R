@@ -42,13 +42,19 @@ ui <- fluidPage(
             selectInput(inputId = "ethnicity", label = "Ethnicity", choices = c("White", "Black", "Asian", "Native American", "Hispanic", "Multi-Racial", "Native Hawaiian", "Unknown"), multiple = T),
         
             # education level
-            selectInput(inputId = "educationAtIntake",multiple = T, label = "Education At Intake", choices = c("Less than a High School Degree", "High School Graduate", "GED", "Some College (No Degree)", "Post Secondary Certification", "Vocational School Graduate", "AA Degree", "4 Year Degree", "Post Graduate Degree", "Unknown")),
+            selectInput(inputId = "educationAtIntake", multiple = T, label = "Education At Intake", choices = c("Less than a High School Degree", "High School Graduate", "GED", "Some College (No Degree)", "Post Secondary Certification", "Vocational School Graduate", "AA Degree", "4 Year Degree", "Post Graduate Degree", "Unknown")),
+            
+            # employment status
+            selectInput(inputId = "employmentStatus", multiple = T, label = "Employment Status", choices = c("Employed, Unemployed")),
             
             # age
             sliderInput(inputId = "age", label = "Age", min = 0, max = 120, step = 1, value = c(0,120)),
             
             # family size
             sliderInput(inputId = "cdbgCityFamilySize", label = "CDBG City Family Size", min = 0, max = 15, step = 1, value = c(0,15)),
+            
+            # VLI
+            selectInput(inputId = "vli", label = "VLI", multiple = T, choices = c(0,-1)),
             
             # MA
             selectInput(inputId = "ma", label = "MA", multiple = T, choices = c(0,1)),
@@ -59,13 +65,6 @@ ui <- fluidPage(
             # DWP
             selectInput(inputId = "dwp", label = "DWP", multiple = T, choices = c(0,1)),
             
-            # funding
-            # selectInput(inputId = "funding",multiple = T, label = "Funding", choices = c("City CDBG", "County CDBG", "DEED P2P", "DEED/WESA", "MFIP", "MN-OJP", "OYOD", "United Way", "United Way-RS", "VI-SPDAT", "Fee-Workshop", "Fee-Individual Services", "Other Agency", "No Funding")),
-            
-            #Services
-            # selectInput(inputId = "program",multiple = T, label = "Program", choices = c("Career Quest", "Employment Services", "Mind Over Matters", "RS-Pre Release", "RS-Post Release", "RS-Aftercare", "Phase 3 - Training", "Phase 4 - DAW", "Phase 4 - Other", "Fee Services")),
-          
-          
             # picking dates
             # span(class = "date-range",
             # dateRangeInput("daterange","Last Employed", format = "mm/dd/yyyy",start = Sys.Date() - 30, end = Sys.Date())
@@ -123,8 +122,7 @@ server <- function(input, output, session) {
         updateSelectInput(session, "gender","Gender",choices = c(unique(data$Gender)))
         updateSelectInput(session, "ethnicity","Ethnicity",choices = c(unique(data$Ethnicity)))
         updateSelectInput(session, "educationAtIntake","Education At Intake",choices = c(unique(data$Education.At.Intake)))
-        # updateSelectInput(session, "funding","Funding",choices = c(unique(data$Funding)))
-        # updateSelectInput(session, "program","Program",choices = c(unique(data$Program)))
+        updateSelectInput(session, "employmentStatus", "Employment Status", choices = c(unique(data$Employment.Status)))
         
         is_not_na <- !unlist(lapply(data$CDBG.City.Family.Size,is.na))
         availableFS <- data$CDBG.City.Family.Size[is_not_na]
@@ -201,6 +199,12 @@ server <- function(input, output, session) {
         if(!is.null(input$educationAtIntake)){
             data <- data[data$Education.At.Intake %in% input$educationAtIntake,]
         }
+        if(!is.null(input$employmentStatus)) {
+            data <- data[data$Employment.Status %in% input$employmentStatus,]
+        }
+        if(!is.null(input$vli)) {
+          data <- data[data$VLI %in% input$vli,]
+        }
         if(!is.null(input$ma)) {
           data <- data[data$MA %in% input$ma,]
         }
@@ -211,22 +215,13 @@ server <- function(input, output, session) {
             data <- data[data$DWP %in% input$dwp,]
         }
         
-        # if(!is.null(input$funding)){
-        #   data <- data[data$Funding %in% input$funding,]
-          
-        # }
-        # if(!is.null(input$program)){
-        #   data <- data[data$Program %in% input$program,]
-          
-        # }
-        
-       # print(data)
-      #  data <- data[data$Wage > input$wage[1] & data$Wage < input$Wage[2]]
+        # print(data)
+        # data <- data[data$Wage > input$wage[1] & data$Wage < input$Wage[2]]
         
         #get desired columns
 
         print(colnames(data))
-        data <- data[c("Client.Id","Client","Gender","Ethnicity","Education.At.Intake","CDBG.City.Family.Size","Age", "CDBG.City.Income", "MA", "MFIP", "DWP")]
+        data <- data[c("Client.Id","Client","Gender","Ethnicity","Education.At.Intake","CDBG.City.Family.Size","Age","Employment.Status","CDBG.City.Income","VLI","MA","MFIP","DWP")]
         print(colnames(data))
         # data$Wage <- paste("$",data$Wage) 
         # colnames(data)[6] = "Education.At.Intake"
