@@ -53,8 +53,8 @@ ui <- fluidPage(
             # family size
             sliderInput(inputId = "cdbgCityFamilySize", label = "CDBG City Family Size", min = 0, max = 15, step = 1, value = c(0,15)),
             
-            # VLI
-            selectInput(inputId = "vli", label = "VLI", multiple = T, choices = c(0,-1)),
+            # criminal history
+            selectInput(inputId = "criminalHistory", multiple = T, label = "Criminal History", choices = c(0,1)),
             
             # MA
             selectInput(inputId = "ma", label = "MA", multiple = T, choices = c(0,1)),
@@ -202,8 +202,8 @@ server <- function(input, output, session) {
         if(!is.null(input$employmentStatus)) {
             data <- data[data$Employment.Status %in% input$employmentStatus,]
         }
-        if(!is.null(input$vli)) {
-          data <- data[data$VLI %in% input$vli,]
+        if(!is.null(input$criminalHistory)) {
+          data <- data[data$Criminal.History %in% input$criminalHistory,]
         }
         if(!is.null(input$ma)) {
           data <- data[data$MA %in% input$ma,]
@@ -221,7 +221,7 @@ server <- function(input, output, session) {
         #get desired columns
 
         print(colnames(data))
-        data <- data[c("Client.Id","Client","Gender","Ethnicity","Education.At.Intake","CDBG.City.Family.Size","Age","Employment.Status","CDBG.City.Income","VLI","MA","MFIP","DWP")]
+        data <- data[c("Client.Id","Client","Gender","Ethnicity","Education.At.Intake","CDBG.City.Family.Size","Age","Employment.Status","CDBG.City.Income","Criminal.History","MA","MFIP","DWP")]
         print(colnames(data))
         # data$Wage <- paste("$",data$Wage) 
         # colnames(data)[6] = "Education.At.Intake"
